@@ -20,7 +20,7 @@ oppgaver, dersom dere sliter med kreativiteten. Det anbefales også å se nøye 
 Er det noe som kunne ha vært spennende å se på?
 
 ### Forslag til oppgaver
-Følgende er det noen forslag til oppgaver. Disse kan sees på som inspirasjon, så finn gjerne på andre vinklinger som du finner mer interessante.
+For å komme raskt i gang har vi laget noen forslag til oppgaver. Disse kan sees på som inspirasjon, så finn gjerne på andre vinklinger som du finner mer interessante:
 - List ut de 10 mest brukte adjektivene for henholdsvis personer under 25, og personer over 60. Er det noe forskjell?
 - List ut de 10 mest brukte adjektivene for de 5 forskjellige verdiene av `rating`.
 - Er det en sammenheng mellom `upvotes` og `rating` fra anmeldelse? (se `SentimentExample.py` for inspirasjon til 
