@@ -7,8 +7,8 @@ Klon eller last ned dette repoet. Dette gjøres ved å klikke på den store grø
 Du trenger minimum Python 3.6 for å kjøre koden. Dersom du ikke har det kan du laste det ned [her](https://www.python.org/downloads/). 
 
 Naviger deretter til mappen med repoet i terminalen og kjør kommandoen `pip install -r requirements.txt` for å installere avhengigheter. Kjør til slutt `python -m textblob.download_corpora` for å laste ned nødvendige modeller. Du må også laste ned et par såkalte "corpus" til nltk: 
-nltk.download('averaged_perceptron_tagger')
-nltk.download('punkt')
+- `nltk.download('averaged_perceptron_tagger')`
+- `nltk.download('punkt')`
 
 Hvis du står fast her, ikke nøl med å spørre!
 
