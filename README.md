@@ -1,11 +1,17 @@
-nltk.download('averaged_perceptron_tagger')
-nltk.download('punkt')
-
 # Workshop med Strise
 I denne workshopen skal vi benytte oss av et datasett som inneholder anmeldelser av kvinneklær på nett.
 Oppgavene vil i stor grad kunne bestemmes av dere selv, men vi har også kommet med noen forslag.
 
 ## Setup
+Klon eller last ned dette repoet. Dette gjøres ved å klikke på den store grønne knappen oppe til høyre, eller ved å kjøre `git clone https://github.com/strise/cogito-workshop`. 
+Du trenger minimum Python 3.6 for å kjøre koden. Dersom du ikke har det kan du laste det ned [her](https://www.python.org/downloads/). 
+
+Naviger deretter til mappen med repoet i terminalen og kjør kommandoen `pip install -r requirements.txt` for å installere avhengigheter. Kjør til slutt `python -m textblob.download_corpora` for å laste ned nødvendige modeller. Du må også laste ned et par såkalte "corpus" til nltk: 
+nltk.download('averaged_perceptron_tagger')
+nltk.download('punkt')
+
+Hvis du står fast her, ikke nøl med å spørre!
+
 
 ## Oppgaver
 I denne workshopen er det ingen krav, men målet er heller at dere skal få leke litt med datasettet som vi har klargjort.
