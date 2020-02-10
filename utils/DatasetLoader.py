@@ -8,6 +8,7 @@ from model.Review import Review
 data_dir = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir, "data"))
 
 def load_reviews() -> List[Review]:
+    print("Loading dataset ...")
     path = os.path.join(data_dir, "reviews.csv")
     column_names = ["review_id", "product_id", "age", "title", "review_text", "rating", "recommends", "upvotes",
                     "division_name", "department_name", "class_name"]
@@ -22,4 +23,5 @@ def load_reviews() -> List[Review]:
             dataset.append(entry)
         except:
             pass
+    print(f"Dataset loaded ({len(dataset)} rows).")
     return dataset
