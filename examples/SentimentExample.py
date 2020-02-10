@@ -14,6 +14,7 @@ dataset = DatasetLoader.load_reviews()
 sentiments = {1: [], 2: [], 3: [], 4: [], 5: []}
 
 # For each review, find the sentiment and append the value to the relevant rating's bucket.
+print("Calculating sentiment values")
 for row in dataset:
     blob = TextBlob(row.full_text())
     sentiment = blob.sentiment.polarity
@@ -24,6 +25,7 @@ x = sentiments.keys()
 y = [sum(sents) / len(sents) for rating, sents in sentiments.items()]
 
 # Configure plot
+print("Plotting figure")
 plt.scatter(x, y)
 plt.title("Average sentiment per rating")
 plt.xlabel("Rating")

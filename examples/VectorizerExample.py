@@ -18,6 +18,7 @@ from utils import DatasetLoader
 dataset = DatasetLoader.load_reviews()
 
 # Transform each text in the dataset to its corresponding vector.
+print("Vectorizing dataset")
 vectorizer = TfidfVectorizer()
 texts = [row.full_text() for row in dataset]
 vectorized_dataset = vectorizer.fit_transform(texts)
