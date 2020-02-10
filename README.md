@@ -6,9 +6,7 @@ Oppgavene vil i stor grad kunne bestemmes av dere selv, men vi har også kommet 
 Klon eller last ned dette repoet. Dette gjøres ved å klikke på den store grønne knappen oppe til høyre, eller ved å kjøre `git clone https://github.com/strise/cogito-workshop-spring-2020`. 
 Du trenger minimum Python 3.6 for å kjøre koden. Dersom du ikke har det kan du laste det ned [her](https://www.python.org/downloads/). 
 
-Naviger deretter til mappen med repoet i terminalen og kjør kommandoen `pip3 install -r requirements.txt` for å installere avhengigheter. Kjør til slutt `python3 -m textblob.download_corpora` for å laste ned nødvendige modeller. Du må også laste ned et par såkalte "corpus" til nltk: 
-- `nltk.download('averaged_perceptron_tagger')`
-- `nltk.download('punkt')`
+Naviger deretter til mappen med repoet i terminalen og kjør kommandoen `pip3 install -r requirements.txt` for å installere avhengigheter. Du må også laste ned et par såkalte "corpus" til nltk. Dette gjøres ved å kjøre `CorpusDownloader.py`, som ligger i `utils`-mappen. 
 
 Hvis du står fast her, ikke nøl med å spørre!
 
@@ -34,6 +32,7 @@ Om du vil ha noe som er litt vanskeligere:
     - Lag en regelbasert implementasjon som benytter sentiment (se `SentimentExample.py`) og eventuelt andre måltall.
     - Mer avansert: En maskinlæringsmodell som tar inn de forskjellige verdiene i en anmeldelse. Her lønner det seg å ha
     jobbet litt med slike metoder tidligere. 
+- Hva er det som gjør at et review får mange upvotes? Finner du noen mønster?
 - Basert på anmeldelsestekstene, lag en "chatbot". Som i `VectorizerExample.py` kan du transformere hver setning i 
 datasettet til en vektor. Når bruker skriver til chatboten, finn den setningen som ligner mest på brukerens input. Denne
 chatboten kommer nok ikke til å klare [Turingtesten](https://no.wikipedia.org/wiki/Turingtest), men så lenge du snakker om
