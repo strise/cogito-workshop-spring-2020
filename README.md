@@ -51,17 +51,21 @@ Den inneholder følgende felter:
 - `title: str`: Tittel på anmeldelsen.
 - `review_text: str`: Teksten i anmeldelsen.
 - `rating: int`: Et score gitt fra bruker i rekkevidde [1, 5] (hvor 5 er best). 
-- `recommends: bool`: En boolsk variabel som sier om brukeren anbefaler produktet.
+- `recommends: bool`: En boolsk variabel som sier om brukeren anbefaler produktet eller ikke.
 - `upvotes: int`: Antall brukere som har markert anmeldelsen som god.
-- `division_name: str`: Høyeste kategori, som er en av følgende: `["General", "General Petite", "Intimates", ""]`
+- `division_name: str`: Høyeste kategori, som er en av følgende: `["General", "General Petite", "Intimates"]`
 - `department_name: str`: Kategori for produktavdeling, som er en av følgende: `["Intimate", "Dresses", "Bottoms", "Tops", "Jackets", "Trend"]`
 - `class_name: str`: Kategori for produkt, som er en av følgende: `["Intimates", "Dresses", "Pants", "Blouses", "Knits", "Outerwear", "Lounge", "Sweaters", "Skirts", "Fine gauge", "Sleep", "Jackets", "Swim", "Trend", "Jeans", "Legwear", "Shorts", "Layering", "Casual bottoms", "Chemises" ]`
+
+Merk at noen av radene i datasettet kan ha tomme verdier på noen felter.
 
 I tillegg har vi laget noen forhåndsdefinerte funksjoner i `Review`-klassen, som kan være nyttig å bruke:
 - `full_text() -> str`: Returnerer `title` og `review_text` slått sammen til én streng.
 - `words() -> List[str]`: Returnerer en liste med ordene i `full_text()`, vha. biblioteket nltk. 
 - `tagged_words() -> List[Tuple[str, str]]`: Returnerer en liste med tupler for alle ordene i `words()`. Det første 
 elementet i tuplene er order, mens det andre elementet beskriver hvilken grammatisk klasse ordet tilhører. 
+
+`tagged_words()` tar noe tid å kjøre (og dette gjelder også noen andre funksjoner som benyttes i eksemplene). Dersom du opplever at det tar lang tid å kjøre koden din kan det være lurt å midlertidig bruke `DatasetLoader.load_reviews()[:100]` for å kun hente de første 100 anmeldelsene. 
 
 ## Eksempler
 I `examples`-mappen ligger det noen eksempler på hva man kan gjøre med datasettet. Her kan man hente litt inspirasjon dersom
