@@ -102,11 +102,8 @@ Skriptet har ikke mye praktisk verdi, men eksemplet viser hvordan tekst kan gjø
 dytte anmeldelsene inn i et nevralt nettverk kan dette være en strategi å bruke.
 
 
-======
 
-English
-
-# Workshop with Strise
+# English: Workshop with Strise
 In this workshop, we will use a dataset consisting of reviews of women's clothes. You can pretty much do whatever you want, but we have made some suggestions.
 
 ## Setup
