@@ -100,3 +100,63 @@ Til slutt finner vi anmeldelsen i datasettet som har likest vektor, og printer d
 
 Skriptet har ikke mye praktisk verdi, men eksemplet viser hvordan tekst kan gjøres om til tall. Dersom du planlegger å 
 dytte anmeldelsene inn i et nevralt nettverk kan dette være en strategi å bruke.
+
+
+======
+
+English
+
+# Workshop with Strise
+In this workshop, we will use a dataset consisting of reviews of women's clothes. You can pretty much do whatever you want, but we have made some suggestions.
+
+## Setup
+Clone or download this repo (`git clone https://github.com/strise/cogito-workshop-spring-2020`). You'll need Python 3.6 (or newer) to run the code.
+
+Navigate to the folder with the repo, and run `pip3 install -r requirements.txt` to install dependencies. You also need to download some corpuses for nltk. This can be done by running `CorpusDownloader.py`, which is located in the `utils`-folder.
+
+If you get stuck, don't hesistate to ask for help!
+
+
+## Tasks
+There are no requirements for this workshop. The goal is rather to have fun and play with the dataset we have prepared. To give some inspiration, we have included some examples you can use. We have also written some suggestions for tasks, if you are not in the creative corner today. 
+
+### Suggestions
+The following tasks should be viewed as inspiration, and you are free to come up with your own angels on these tasks.
+- List the 10 most used adjectives for persons under 25, and persons over 60, respectively.
+- List the 10 most used adjectives for the five different values of `rating`.
+- Is there any correlation between `upvotes` and `rating`? (See `SentimentExample.py` for inspiration on how to plot such data)
+- Are there any differences between the sentiment of the reviews for the different categories of clothes? E.g., are the reviews for pants more positive than reviews for sweaters? (see `SentimentExample.py`)
+
+If you want something more advanced:
+- Create a program that predicts `rating` for a review. Here, there are many opportunities:
+    - Create a rule based implementation which uses sentiment, and possibly other metrics.
+    - More advanced: A machine learning model taking as input the different values in a review.
+- Are there any patterns in the reviews receiving many upvotes?
+- Based on the review texts, create a "chatbot". Like in `VectorizerExample.py`, you can transform each sentence in the dataset to a vector. When a user writes to the chatbot, find the sentence most similar to the user's input. This chatbot is probably not going to pass the [Turingtesten](https://no.wikipedia.org/wiki/Turingtest), but as long as you keep conversation about clothes, you should get responses that are similar to questions.
+ 
+## Documentation
+### Datset/The Review-class
+The dataset is downloaded from [kaggle](https://www.kaggle.com/nicapotato/womens-ecommerce-clothing-reviews), and contains data from real reviews of women's clothes. We have created methods for parsing the dataset in `DatasetLoader.load_reviews()`. By running this function, you should get about 23.000 instances of the `Review`-class.
+
+It contains the following fields:
+- `review_id: str`: A unique ID for the review.
+- `product_id str`: The ID of the reviewed product.
+- `age: int`: The age of the reviewer.
+- `title: str`: The title of the review.
+- `review_text: str`: The body text of the review.
+- `rating: int`: A score in the range [1,5] (where 5 is best)
+- `recommends: bool`: En boolean variable stating whether this product was recommended by the reviewer or not.
+- `upvotes: int`: Number of users that have marked the review as good.
+- `division_name: str`: The highest level product category, which is one of the following: `["General", "General Petite", "Intimates"]`
+- `department_name: str`: Category for department, which is one of the following: `["Intimate", "Dresses", "Bottoms", "Tops", "Jackets", "Trend"]`
+- `class_name: str`: Product class, which is one of the following: `["Intimates", "Dresses", "Pants", "Blouses", "Knits", "Outerwear", "Lounge", "Sweaters", "Skirts", "Fine gauge", "Sleep", "Jackets", "Swim", "Trend", "Jeans", "Legwear", "Shorts", "Layering", "Casual bottoms", "Chemises" ]`
+
+Note that some of the values might be empty.
+
+Additionally, we have made some predefined functions which can be called on `Review`-instances:
+- `full_text() -> str`: Returns `title` and `review_text` joined to one string.
+- `words() -> List[str]`: Returns a list of the words in `full_text()`. 
+- `tagged_words() -> List[Tuple[str, str]]`: Returns a list of tuples, based on the elements in `words()`. The first element in the tuples is the word, while the second element describes which grammatical category the word belongs to.  
+
+## Examples
+In the `examples`-folder, there are some examples on what you can do with the data set.
